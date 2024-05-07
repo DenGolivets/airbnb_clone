@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { createReservation } from "@/app/actions";
 import CategoryShowcase from "@/app/components/CategoryShowcase";
 import HomeMap from "@/app/components/HomeMap";
@@ -13,7 +14,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { unstable_noStore as noStore } from 'next/cache'
 
-export async function getData(homeId: string) {
+async function getData(homeId: string) {
   noStore();
   const data = await prisma.home.findUnique({
     where: {
